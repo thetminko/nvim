@@ -24,7 +24,8 @@ local plugins = {
         "html-lsp",
         "prisma-language-server",
         "cspell",
-        "dockerfile-language-server"
+        "dockerfile-language-server",
+        "gopls"
       }
     }
   },
@@ -56,7 +57,8 @@ local plugins = {
         "html",
         "json",
         "dockerfile",
-        "prisma"
+        "prisma",
+        "go"
       }
       return opts
     end
@@ -67,7 +69,6 @@ local plugins = {
       git = {
         enable = true,
       },
-    
       renderer = {
         highlight_git = true,
         icons = {
@@ -85,11 +86,37 @@ local plugins = {
       require("better_escape").setup()
     end,
   },
-
   {
-    'github/copilot.vim',
+    "github/copilot.vim",
     lazy = false
   },
+  -- golang debuggers
+  {
+    "mfussenegger/nvim-dap",
+    init = function()
+      require("core.utils").load_mappings("dap")
+    end
+  },
+  {
+    "leoluz/nvim-dap-go",
+    ft = "go",
+    dependencies = "mfussenegger/nvim-dap",
+    config = function(_, opts)
+      require("dap-go").setup(opts)
+      require("core.utils").load_mappings("dap_go")
+    end
+  },
+  {
+    "olexsmir/gopher.nvim",
+    ft = "go",
+    config = function(_, opts)
+      require("gopher").setup(opts)
+      require("core.utils").load_mappings("gopher")
+    end,
+    build = function()
+      vim.cmd [[silent! GoInstallDeps]]
+    end
+  }
 
 }
 
