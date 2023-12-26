@@ -20,7 +20,8 @@ local plugins = {
         "typescript-language-server",
         "tailwindcss-language-server",
         "eslint-lsp",
-        "prettierd"
+        "prettierd",
+        "html-lsp"
       }
     }
   },
@@ -43,10 +44,11 @@ local plugins = {
       opts.ensure_installed = {
         "lua",
         "javascript",
-        "jsx",
         "typescript",
         "tsx",
-        "css"
+        "css",
+        "html",
+        "json"
       }
       return opts
     end

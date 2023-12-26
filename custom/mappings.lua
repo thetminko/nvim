@@ -35,8 +35,8 @@ M.general = {
       end,
       "LSP rename",
     },
-    -- ["K"] = { "<Esc>:m .+1<CR>==gi", "Move line up" },
-    -- ["J"] = { "<Esc>:m .-2<CR>==gi", "Move line down" },
+    ["<C-K>"] = { "<Esc>:m .-2<CR>==gi", "Move line up" },
+    ["<C-J>"] = { "<Esc>:m .+1<CR>==gi", "Move line down" },
   },
 
   v = { 
