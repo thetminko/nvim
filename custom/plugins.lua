@@ -42,6 +42,9 @@ local plugins = {
   },
   {
     "nvim-treesitter/nvim-treesitter",
+    highlight = { 
+      enable = true,
+    },
     opts = function()
       opts = require "plugins.configs.treesitter"
       opts.ensure_installed = {
@@ -86,7 +89,8 @@ local plugins = {
   {
     'github/copilot.vim',
     lazy = false
-  }
+  },
+
 }
 
 return plugins
