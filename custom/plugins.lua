@@ -19,9 +19,12 @@ local plugins = {
       ensure_installed = {
         "typescript-language-server",
         "tailwindcss-language-server",
-        "eslint-lsp",
+        "eslint_d",
         "prettierd",
-        "html-lsp"
+        "html-lsp",
+        "prisma-language-server",
+        "cspell",
+        "dockerfile-language-server"
       }
     }
   },
@@ -48,7 +51,9 @@ local plugins = {
         "tsx",
         "css",
         "html",
-        "json"
+        "json",
+        "dockerfile",
+        "prisma"
       }
       return opts
     end
@@ -77,6 +82,11 @@ local plugins = {
       require("better_escape").setup()
     end,
   },
+
+  {
+    'github/copilot.vim',
+    lazy = false
+  }
 }
 
 return plugins
