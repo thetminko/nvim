@@ -30,12 +30,6 @@ M.general = {
       end,
       "LSP code action", 
     },
-    ["<C-1>"] = {
-      function()
-        require("nvchad_ui.renamer").open()
-      end,
-      "LSP rename",
-    },
     ["<C-K>"] = { "<Esc>:m .-2<CR>==gi", "Move line up" },
     ["<C-J>"] = { "<Esc>:m .+1<CR>==gi", "Move line down" },
   },

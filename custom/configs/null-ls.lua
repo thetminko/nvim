@@ -10,8 +10,6 @@ local opts = {
     null_ls.builtins.code_actions.eslint_d,
 
     null_ls.builtins.code_actions.refactoring,
-
-    null_ls.builtins.formatting.prismaFmt,
   },
   on_attach = function(client, bufnr)
     if client.supports_method("textDocument/formatting") then
@@ -23,7 +21,7 @@ local opts = {
         group = augroup,
         buffer = bufnr,
         callback = function()
-          vim.lsp.buf.format { async = true }
+          vim.lsp.buf.format({ async = false })
           -- vim.lsp.buf.format({ bufnr = bufnr })
         end
       })
