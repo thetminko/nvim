@@ -19,7 +19,7 @@ local plugins = {
       ensure_installed = {
         "typescript-language-server",
         "tailwindcss-language-server",
-        "eslint_d",
+        "eslint-lsp",
         "prettierd",
         "html-lsp",
         "prisma-language-server",
