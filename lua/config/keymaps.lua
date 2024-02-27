@@ -2,9 +2,7 @@
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
 
-vim.keymap.set('n', '<C-j>', '<cmd>m .+1<cr>==', { desc = "Move down" })
-vim.keymap.set('n', '<C-k>', '<cmd>m .-2<cr>==', { desc = "Move Up" })
--- vim.keymap.set('i', '<C-J>', '<esc><cmd>m .+1<cr>==gi', { desc = "Move down" })
--- vim.keymap.set('i', '<C-K>', '<esc><cmd>m .-2<cr>==gi', { desc = "Move down" })
--- vim.keymap.set('v', '<C-k>', ':m '<-2<cr>gv=gv', { desc = "Move Up" })
--- vim.keymap.set('v', '<C-j>', ':move '<-2<CR>gv=gv', { desc = "Move down" })
+vim.api.nvim_set_keymap('n', '<M-j>', '<cmd>m .+1<cr>==', { desc = "Move down", silent = true })
+vim.api.nvim_set_keymap('n', '<M-k>', '<cmd>m .-2<cr>==', { desc = "Move Up", silent = true })
+vim.api.nvim_set_keymap('i', '<M-j>', '<esc>:m .+1<cr>==i', { desc = "Move down", noremap = true, silent = true })
+vim.api.nvim_set_keymap('i', '<M-k>', '<esc>:m .-2<cr>==i', { desc = "Move Up", noremap = true, silent = true  })
