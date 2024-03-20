@@ -7,6 +7,8 @@ return {
         "~/Workspaces/*Tech/g*sg/apps/*",
         "~/Workspaces/*Tech/g*sg/devops/*",
         "~/configs/*",
+        "~/.config/*",
+        "~/.aws/*",
       },
       last_session_on_startup = false,
       dashboard_mode = true,
