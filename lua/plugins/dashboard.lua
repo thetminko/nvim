@@ -6,12 +6,12 @@ return {
     event = "VimEnter",
     opts = function()
       local logo = [[
-         ██╗      █████╗ ███████╗██╗   ██╗██╗   ██╗██╗███╗   ███╗          Z
-         ██║     ██╔══██╗╚══███╔╝╚██╗ ██╔╝██║   ██║██║████╗ ████║      Z    
-         ██║     ███████║  ███╔╝  ╚████╔╝ ██║   ██║██║██╔████╔██║   z       
-         ██║     ██╔══██║ ███╔╝    ╚██╔╝  ╚██╗ ██╔╝██║██║╚██╔╝██║ z         
-         ███████╗██║  ██║███████╗   ██║    ╚████╔╝ ██║██║ ╚═╝ ██║           
-         ╚══════╝╚═╝  ╚═╝╚══════╝   ╚═╝     ╚═══╝  ╚═╝╚═╝     ╚═╝           
+        ██╗  ██╗██╗    ███╗   ███╗██╗  ██╗
+        ██║  ██║██║    ████╗ ████║██║ ██╔╝
+        ███████║██║    ██╔████╔██║█████╔╝
+        ██╔══██║██║    ██║╚██╔╝██║██╔═██╗
+        ██║  ██║██║    ██║ ╚═╝ ██║██║  ██╗
+        ╚═╝  ╚═╝╚═╝    ╚═╝     ╚═╝╚═╝  ╚═╝
     ]]
 
       logo = string.rep("\n", 8) .. logo .. "\n\n"
@@ -27,11 +27,11 @@ return {
           header = vim.split(logo, "\n"),
         -- stylua: ignore
         center = {
-          { action = Util.telescope("files"),                                    desc = " Find file",       icon = " ", key = "f" },
-          -- { action = "ene | startinsert",                                        desc = " New file",        icon = " ", key = "n" },
           { action = "NeovimProjectLoadRecent",                                  desc = " Recent Project",  icon = " ", key = "r" },
           { action = "Telescope neovim-project history",                         desc = " Project History", icon = " ", key = "h" },
           { action = "Telescope neovim-project discover",                        desc = " Project Discover",icon = " ", key = "d" },
+          { action = Util.telescope("files"),                                    desc = " Find file",       icon = " ", key = "f" },
+          -- { action = "ene | startinsert",                                        desc = " New file",        icon = " ", key = "n" },
           { action = "Telescope oldfiles",                                       desc = " Recent files",    icon = " ", key = "rf" },
           { action = "Telescope live_grep",                                      desc = " Find text",       icon = " ", key = "g" },
           { action = [[lua require("lazyvim.util").telescope.config_files()()]], desc = " Config",          icon = " ", key = "c" },
