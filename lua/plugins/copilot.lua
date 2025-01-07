@@ -31,5 +31,5 @@ return {
         dockerfile = true,
       },
     },
-  }
+  },
 }
